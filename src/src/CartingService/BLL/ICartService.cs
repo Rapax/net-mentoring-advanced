@@ -1,8 +1,8 @@
-﻿using NetMentoringAdvanced.CartingService.Domain;
+﻿using CartingService.Domain;
 
-namespace NetMentoringAdvanced.CartingService.DAL
+namespace CartingService.BLL
 {
-    public interface ICartRepository
+    public interface ICartService
     {
         IEnumerable<CartItem> GetItems(Guid cartId);
 

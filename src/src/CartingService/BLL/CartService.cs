@@ -1,7 +1,7 @@
-﻿using NetMentoringAdvanced.CartingService.DAL;
-using NetMentoringAdvanced.CartingService.Domain;
+﻿using CartingService.DAL;
+using CartingService.Domain;
 
-namespace NetMentoringAdvanced.CartingService.BLL
+namespace CartingService.BLL
 {
     internal class CartService : ICartService
     {

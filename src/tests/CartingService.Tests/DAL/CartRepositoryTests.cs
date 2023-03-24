@@ -1,6 +1,6 @@
 ﻿using LiteDB;
-using NetMentoringAdvanced.CartingService.DAL;
-using NetMentoringAdvanced.CartingService.Domain;
+using CartingService.DAL;
+using CartingService.Domain;
 
 namespace NetMentoringAdvanced.CartingService.Tests.DAL
 {

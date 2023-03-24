@@ -1,4 +1,4 @@
-﻿namespace NetMentoringAdvanced.CartingService.Domain
+﻿namespace CartingService.Domain
 {
     public class Cart
     {

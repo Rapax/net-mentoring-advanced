@@ -17,8 +17,8 @@
     <PackageReference Include="coverlet.collector" Version="3.1.2" />
   </ItemGroup>
 
-	<ItemGroup>
-    <ProjectReference Include="..\..\..\src\CartingService\NetMentoringAdvanced.CartingService\NetMentoringAdvanced.CartingService.csproj" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CartingService\CartingService.csproj" />
   </ItemGroup>
 
 </Project>

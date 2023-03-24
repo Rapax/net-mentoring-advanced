@@ -5,15 +5,17 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67773C0E-2A23-4A0F-B5C4-B08E9D114AD4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CartingService", "CartingService", "{1058AD72-8E5A-4356-A751-20AEF033234B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetMentoringAdvanced.CartingService", "src\CartingService\NetMentoringAdvanced.CartingService\NetMentoringAdvanced.CartingService.csproj", "{EC68848D-63EA-476F-BD46-578C755695FC}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F965807A-39ED-45F9-B482-2281C07C92E6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CartingService", "CartingService", "{0AEA4BFA-E904-4C81-8009-DF6529458244}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CatalogService", "CatalogService", "{9A16270C-166E-4F45-8398-0C85681109DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetMentoringAdvanced.CartingService.Tests", "tests\CartingService\NetMentoringAdvanced.CartingService.Tests\NetMentoringAdvanced.CartingService.Tests.csproj", "{7D115C71-908F-4C4B-8A6C-B8F1E49621DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartingService", "src\CartingService\CartingService.csproj", "{E83BB8BB-4CA5-42A6-A7DD-1EB9703EFB80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Domain", "src\CatalogService\CatalogService.Domain\CatalogService.Domain.csproj", "{5B357C81-B8B4-4350-B74D-F5754DDA09C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogService.Infrastructure", "src\CatalogService\CatalogService.Infrastructure\CatalogService.Infrastructure.csproj", "{8A5913E7-F7FC-4EF8-A7B7-06CB4A91C8B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CartingService.Tests", "tests\CartingService.Tests\CartingService.Tests.csproj", "{10E6C0B4-55E8-4F88-AD98-AEFB575120E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,23 +23,32 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EC68848D-63EA-476F-BD46-578C755695FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC68848D-63EA-476F-BD46-578C755695FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC68848D-63EA-476F-BD46-578C755695FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC68848D-63EA-476F-BD46-578C755695FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7D115C71-908F-4C4B-8A6C-B8F1E49621DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7D115C71-908F-4C4B-8A6C-B8F1E49621DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7D115C71-908F-4C4B-8A6C-B8F1E49621DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7D115C71-908F-4C4B-8A6C-B8F1E49621DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83BB8BB-4CA5-42A6-A7DD-1EB9703EFB80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83BB8BB-4CA5-42A6-A7DD-1EB9703EFB80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83BB8BB-4CA5-42A6-A7DD-1EB9703EFB80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83BB8BB-4CA5-42A6-A7DD-1EB9703EFB80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B357C81-B8B4-4350-B74D-F5754DDA09C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B357C81-B8B4-4350-B74D-F5754DDA09C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B357C81-B8B4-4350-B74D-F5754DDA09C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B357C81-B8B4-4350-B74D-F5754DDA09C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A5913E7-F7FC-4EF8-A7B7-06CB4A91C8B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A5913E7-F7FC-4EF8-A7B7-06CB4A91C8B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A5913E7-F7FC-4EF8-A7B7-06CB4A91C8B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A5913E7-F7FC-4EF8-A7B7-06CB4A91C8B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E6C0B4-55E8-4F88-AD98-AEFB575120E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E6C0B4-55E8-4F88-AD98-AEFB575120E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E6C0B4-55E8-4F88-AD98-AEFB575120E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E6C0B4-55E8-4F88-AD98-AEFB575120E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{1058AD72-8E5A-4356-A751-20AEF033234B} = {67773C0E-2A23-4A0F-B5C4-B08E9D114AD4}
-		{EC68848D-63EA-476F-BD46-578C755695FC} = {1058AD72-8E5A-4356-A751-20AEF033234B}
-		{0AEA4BFA-E904-4C81-8009-DF6529458244} = {F965807A-39ED-45F9-B482-2281C07C92E6}
-		{7D115C71-908F-4C4B-8A6C-B8F1E49621DE} = {0AEA4BFA-E904-4C81-8009-DF6529458244}
+		{9A16270C-166E-4F45-8398-0C85681109DB} = {67773C0E-2A23-4A0F-B5C4-B08E9D114AD4}
+		{E83BB8BB-4CA5-42A6-A7DD-1EB9703EFB80} = {67773C0E-2A23-4A0F-B5C4-B08E9D114AD4}
+		{5B357C81-B8B4-4350-B74D-F5754DDA09C1} = {9A16270C-166E-4F45-8398-0C85681109DB}
+		{8A5913E7-F7FC-4EF8-A7B7-06CB4A91C8B0} = {9A16270C-166E-4F45-8398-0C85681109DB}
+		{10E6C0B4-55E8-4F88-AD98-AEFB575120E0} = {F965807A-39ED-45F9-B482-2281C07C92E6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA4D9F6A-ECC7-481F-BE85-F1FDE7B02C43}

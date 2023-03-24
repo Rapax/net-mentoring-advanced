@@ -1,7 +1,7 @@
 ﻿using LiteDB;
-using NetMentoringAdvanced.CartingService.Domain;
+using CartingService.Domain;
 
-namespace NetMentoringAdvanced.CartingService.DAL
+namespace CartingService.DAL
 {
     internal class CartRepository : ICartRepository
     {
