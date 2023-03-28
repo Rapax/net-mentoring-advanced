@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CatalogService.Domain.Common
+﻿namespace CatalogService.Domain.Common
 {
-    public class Entity
+    public abstract class Entity
     {
+        public int Id { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is not Entity item)
+            {
+                return false;
+            }
+
+            return Id.Equals(item.Id);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
     }
 }
