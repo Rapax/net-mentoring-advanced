@@ -16,26 +16,22 @@ namespace CatalogService.Infrastructure.Persistance.Repositories
             _context = context;
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>>? wherePredicate = null)
+        public virtual async Task<IEnumerable<T>> GetAllAsync(Expression<Func<T, bool>>? wherePredicate = null, CancellationToken cancellationToken = default, params Expression<Func<T, object>>[] includes)
         {
-            var query = _context.Set<T>().AsQueryable();
+            var query = BuildQuery(includes);
             if(wherePredicate != null)
             {
                 query = query.Where(wherePredicate);
             }
 
-            return await query.ToListAsync();
+            return await query.ToListAsync(cancellationToken);
         }
 
-        public virtual Task<T?> GetAsync(int id, params Expression<Func<T, object>>[] includes)
+        public virtual Task<T?> GetAsync(int id, CancellationToken cancellationToken = default, params Expression<Func<T, object>>[] includes)
         {
-            var query = _context.Set<T>().AsQueryable();
-            foreach (var include in includes)
-            {
-                query = query.Include(include);
-            }
+            IQueryable<T> query = BuildQuery(includes);
 
-            return query.FirstOrDefaultAsync(x => x.Id == id);
+            return query.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
         }
 
         public virtual T Add(T entity)
@@ -52,6 +48,17 @@ namespace CatalogService.Infrastructure.Persistance.Repositories
         {
             var entityEntry = _context.Set<T>().Update(entity);
             return entityEntry.Entity;
+        }
+
+        private IQueryable<T> BuildQuery(Expression<Func<T, object>>[] includes)
+        {
+            var query = _context.Set<T>().AsQueryable();
+            foreach (var include in includes)
+            {
+                query = query.Include(include);
+            }
+
+            return query;
         }
     }
 }
